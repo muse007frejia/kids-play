@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>影评 · 音乐剧专站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> <!-- 统一引用外部样式表，确保背景图等样式一致 -->
+    <style>
+        /* 影评页面特有样式 */
+        .review-list {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+        .review-card {
+            background: rgba(255,255,255,0.9); /* 半透明白色背景，适配整体背景 */
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .review-title {
+            margin-top: 0;
+            color: #333;
+        }
+        .rating {
+            color: #ffcc00;
+            margin: 5px 0 15px;
+            display: block;
+        }
+        .review-content {
+            line-height: 1.7;
+            color: #555;
+        }
+        .tags {
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px dashed #eee;
+        }
+        .tag {
+            color: #d43f3a;
+            text-decoration: none;
+            margin-right: 10px;
+            font-size: 0.9em;
+        }
+        .tag:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img class="header-logo" src="images/logo.png" alt="音乐剧专站Logo"> <!-- 统一头部Logo -->
+        <h1>音乐剧影评</h1>
+        <p class="intro-text">观众与剧评人的真实感受，解读作品背后的情感与思考</p>
+    </header>
+
+    <!-- 统一导航栏，当前页高亮 -->
+    <nav class="flex">
+        <a href="what.html">什么是音乐剧</a>
+        <a href="story.html">音乐剧的类型</a>
+        <a href="cast.html">角色与演员</a>
+        <a href="media.html">多媒体</a>
+        <a href="background.html">原作与幕后</a>
+        <a href="review.html" style="background:#d43f3a;">影评</a> <!-- 当前页高亮 -->
+        <a href="credits.html">资料来源</a>
+    </nav>
+
+    <main class="page-content"> <!-- 统一主内容区类名 -->
+        <div class="review-list">
+            <div class="review-card">
+                <h3 class="review-title">《摇滚红与黑》：摇滚与古典的激情碰撞</h3>
+                <span class="rating">★★★★★ （5/5）</span>
+                <p class="review-content">
+                    这是我看过最震撼的音乐剧之一！音乐极具感染力，演员的表现力令人惊叹。尤其是男主角的嗓音，充满了摇滚的爆发力与古典的细腻，完美诠释了于连的矛盾内心。当摇滚的节奏遇上古典的旋律，每一个音符都在诉说于连的野心与挣扎。
+                </p>
+                <div class="tags">
+                    <a href="#" class="tag">摇滚音乐剧</a>
+                    <a href="#" class="tag">法国音乐剧</a>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <h3 class="review-title">《猫》：超越时代的经典魅力</h3>
+                <span class="rating">★★★★☆ （4/5）</span>
+                <p class="review-content">
+                    时隔多年再次观看《猫》的现场，依然被其独特的艺术魅力所折服。服装与化妆设计堪称教科书级别，每只“猫”都有鲜明的个性。《Memory》响起时，全场共鸣的感觉难以言表，经典之所以为经典，在于它能跨越时间触动人心。
+                </p>
+                <div class="tags">
+                    <a href="#" class="tag">西区音乐剧</a>
+                    <a href="#" class="tag">经典</a>
+                </div>
+            </div>
+
+            <div class="tags">
+                热门标签：
+                <a href="#" class="tag">摇滚红与黑</a>
+                <a href="#" class="tag">猫</a>
+                <a href="#" class="tag">悲惨世界</a>
+                <a href="#" class="tag">歌剧魅影</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- 统一页脚 -->
+    <footer>
+        <p>© 2025 音乐剧专站 | 大学生期末作业</p>
+    </footer>
+</body>
+</html>

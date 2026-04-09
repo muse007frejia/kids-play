@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>音乐剧风格测试 · 音乐剧专站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- 新增测试页专属样式：优化表单排版，保持与整体风格统一 -->
+    <style>
+        /* 问题容器：增加间距，统一宽度 */
+        .question {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background: rgba(255,255,255,0.8); /* 半透明白色背景，突出表单 */
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        /* 选项样式：垂直排列，增加间距 */
+        .question label {
+            display: block;
+            margin: 12px 0;
+            text-align: left;
+            cursor: pointer;
+            color: #333;
+        }
+        /* 单选按钮美化：与主题红呼应 */
+        .question input[type="radio"] {
+            accent-color: #d43f3a;
+            margin-right: 8px;
+        }
+        /* 提交按钮：居中显示，增加间距 */
+        .submit-btn {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部：保持与其他页面一致的结构 -->
+    <header>
+        <img class="header-logo" src="images/logo.png" alt="音乐剧专站Logo">
+        <h1>音乐剧风格偏好测试</h1>
+        <p class="intro-text">3道题，找到你的音乐剧灵魂风格，解锁专属推荐</p>
+    </header>
+
+    <!-- 导航栏：当前页高亮，下拉菜单保留 -->
+    <nav class="flex">
+        <a href="what.html">什么是音乐剧</a>
+        <a href="story.html">音乐剧的类型</a>
+        <a href="cast.html">角色与演员</a>
+        <a href="media.html">多媒体</a>
+        <a href="background.html">原作与幕后</a>
+        <a href="review.html">影评</a>
+        <a href="credits.html">资料来源</a>
+        <div class="dropdown">
+            <div class="dropbtn">探索更多</div>
+            <div class="dropdown-content">
+                <a href="test.html" style="background:#d43f3a;">风格测试</a>
+                <a href="media.html#classic">经典片段</a>
+                <a href="review.html#hot">热门影评</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主体内容：表单居中，问题容器美化 -->
+    <main class="page-content">
+        <form action="result.html" method="get">
+            <!-- 问题1：音乐风格偏好 -->
+            <div class="question">
+                <h3>1. 你更喜欢哪种音乐风格？</h3>
+                <label><input type="radio" name="music" value="broadway" required> 恢弘抒情的管弦乐（如《歌剧魅影》主题曲）</label>
+                <label><input type="radio" name="music" value="rock"> 节奏强烈的摇滚（如《吉屋出租》的《Seasons of Love》）</label>
+                <label><input type="radio" name="music" value="jazz"> 慵懒魅惑的爵士（如《芝加哥》的《All That Jazz》）</label>
+                <label><input type="radio" name="music" value="pop"> 流行感十足的旋律（如《冰雪奇缘》的《Let It Go》）</label>
+            </div>
+
+            <!-- 问题2：剧情偏好 -->
+            <div class="question">
+                <h3>2. 你更倾向于哪种剧情类型？</h3>
+                <label><input type="radio" name="story" value="epic" required> 史诗级的宏大叙事（如《悲惨世界》的社会变革）</label>
+                <label><input type="radio" name="story" value="romance"> 浪漫唯美的爱情故事（如《西区故事》的跨种族爱恋）</label>
+                <label><input type="radio" name="story" value="comedy"> 轻松诙谐的喜剧（如《金牌制作人》的荒诞创业）</label>
+                <label><input type="radio" name="story" value="reality"> 反映现实的深刻题材（如《汉密尔顿》的历史真实事件）</label>
+            </div>
+
+            <!-- 问题3：舞台风格偏好 -->
+            <div class="question">
+                <h3>3. 你喜欢哪种舞台呈现？</h3>
+                <label><input type="radio" name="stage" value="grand" required> 华丽震撼的大场面（如《猫》的“猫族舞会”舞美）</label>
+                <label><input type="radio" name="stage" value="minimal"> 简约写意的小而美（如《近乎正常》的极简舞台）</label>
+                <label><input type="radio" name="stage" value="interactive"> 互动感强的沉浸式（如《Sleep No More》的观众参与）</label>
+                <label><input type="radio" name="stage" value="innovative"> 充满创意的实验性（如《春之觉醒》的现代舞蹈融合）</label>
+            </div>
+
+            <!-- 提交按钮：用btn类保持风格统一，submit-btn居中 -->
+            <div class="submit-btn next-btn">
+                <button type="submit" class="btn">查看你的专属风格</button>
+                <!-- 返回按钮：方便用户退出测试 -->
+                <a href="story.html" class="btn" style="background:#666; margin-left: 15px;">返回类型页</a>
+            </div>
+        </form>
+    </main>
+
+    <!-- 页脚：与其他页面保持一致 -->
+    <footer>
+        <p>© 2025 音乐剧专站 | 专注于音乐剧文化传播</p>
+        <p>如有内容侵权，请联系我们删除</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>音乐剧专站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引用外部CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- 字体图标 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <!-- 收藏图标 -->
+    <link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath fill='%23d43f3a' d='M16 2C8.83 2 3 7.83 3 15c0 5.25 3.79 9.83 9 11.19V27c0 .55.45 1 1 1s1-.45 1-1v-0.81c5.21-1.36 9-5.94 9-11.19 0-7.17-5.83-13-13-13zm0 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z'/%3E%3C/svg%3E" type="image/svg+xml">
+</head>
+<body>
+    <div id="wrapper">
+        <!-- 头部（带渐变背景+Logo） -->
+        <header>
+            <img src="images/logo.png" alt="音乐剧专站Logo" class="header-logo">
+            <h1>音乐剧专站</h1>
+            <p>感受舞台的魅力</p>
+        </header>
+
+        <!-- 导航栏（flex布局+下拉菜单） -->
+        <nav>
+            <a href="what.html">什么是音乐剧</a>
+            <a href="background.html">原作与幕后</a>
+            <a href="test.html">风格测试</a>
+            <!-- 下拉菜单 -->
+            <div class="dropdown">
+                <div class="dropbtn">探索更多 ▼</div>
+                <div class="dropdown-content">
+                    <a href="what.html#type">音乐剧的类型</a>
+                    <a href="media.html">多媒体</a>
+                    <a href="review.html">影评</a>
+                    <a href="credits.html">资料来源</a>
+                </div>
+            </div>
+            <a href="contact.html">联系我们</a>
+        </nav>
+
+        <!-- 焦点图（带hover缩放效果） -->
+        <div class="hero">音乐剧的舞台魔力</div>
+
+        <!-- 主体内容 -->
+        <main>
+            <h2>欢迎来到音乐剧世界</h2>
+            <p class="intro-text">
+                当旋律响起，灯光聚焦，舞台便成为故事的容器——这里有悲欢离合的交织，有梦想与现实的碰撞，每一段唱词、每一个舞步，都是艺术家对世界的深情诉说。
+            </p>
+            <div class="page-content">
+                <p>我们收录了全球经典与新锐音乐剧资源，从百老汇的《歌剧魅影》到西区的《悲惨世界》，从现代革新的《汉密尔顿》到本土化创作的优质作品，带你解锁舞台艺术的多元魅力。</p>
+                <p>在这里，你可以了解音乐剧的起源与发展，探索幕后创作的故事，观看精彩的片段集锦，还能阅读专业影评与观众反馈，与同好共享这份舞台情怀。</p>
+            </div>
+
+            <!-- 测试卡片 -->
+            <div class="card">
+                <h3><i class="fa fa-magic"></i>解锁你的专属音乐剧风格</h3>
+                <p>纠结不知道看什么音乐剧？3道题快速测试，精准匹配你的音乐偏好、剧情喜好与舞台风格，一键获取定制化作品推荐，告别选择困难！</p>
+                <a href="test.html" class="btn">立即开始测试</a>
+            </div>
+
+            <!-- 联系我们卡片 -->
+            <div class="card">
+                <h3><i class="fa fa-envelope"></i>联系我们</h3>
+                <p>若你有音乐剧资源分享、合作建议，或对网站内容有疑问，欢迎通过以下方式联系我们，我们会在1-2个工作日内回复。</p>
+                <ul class="contact-list">
+                    <li><i class="fa fa-envelope-o"></i> 官方邮箱：contact@musicalsite.com</li>
+                    <li><i class="fa fa-phone"></i> 咨询电话：400-123-4567（工作日 9:00-18:00）</li>
+                               </ul>
+                <a href="contact.html" class="btn">前往联系页面</a>
+            </div>
+        </main>
+
+        <!-- 页脚（带主题红边框） -->
+        <footer>
+            <p>© 2025 音乐剧专题作业站 | 素材仅供学习使用</p>
+        </footer>
+    </div>
+
+    <!-- 手型特效脚本 -->
+    <script>
+        document.addEventListener('click', function(e) {
+            const handElem = document.createElement('span');
+            handElem.className = 'click-hand';
+            handElem.textContent = '👋';
+            // 定位到点击坐标（中心对齐）
+            handElem.style.left = `${e.clientX}px`;
+            handElem.style.top = `${e.clientY}px`;
+            document.body.appendChild(handElem);
+            // 动画结束后移除元素
+            setTimeout(() => handElem.remove(), 1000);
+        });
+    </script>
+</body>
+</html>
