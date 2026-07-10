@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>你的音乐剧风格 · 音乐剧专站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- 结果页专属样式：美化结果卡片 -->
+    <style>
+        .result-card {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 30px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            text-align: left;
+        }
+        .result-card h2 span {
+            color: #d43f3a;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .result-card ul {
+            max-width: 700px;
+            margin: 20px auto;
+            line-height: 2;
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .result-card li strong {
+            color: #444;
+        }
+        .btn-group {
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部：保持统一结构 -->
+    <header>
+        <img class="header-logo" src="images/logo.png" alt="音乐剧专站Logo">
+        <h1>你的音乐剧风格结果</h1>
+        <p class="intro-text">每一种偏好都是独特的艺术共鸣，以下是为你匹配的专属风格与推荐</p>
+    </header>
+
+    <!-- 导航栏：下拉菜单中高亮测试入口 -->
+    <nav class="flex">
+        <a href="what.html">什么是音乐剧</a>
+        <a href="story.html">音乐剧的类型</a>
+        <a href="cast.html">角色与演员</a>
+        <a href="media.html">多媒体</a>
+        <a href="background.html">原作与幕后</a>
+        <a href="review.html">影评</a>
+        <a href="credits.html">资料来源</a>
+        <div class="dropdown">
+            <div class="dropbtn">探索更多</div>
+            <div class="dropdown-content">
+                <a href="test.html" style="background:#d43f3a;">风格测试</a>
+                <a href="media.html#classic">经典片段</a>
+                <a href="review.html#hot">热门影评</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主体内容：结果卡片+推荐列表 -->
+    <main class="page-content">
+        <section class="result-card">
+            <!-- 动态结果：实际开发中可通过JS根据表单参数切换，此处展示核心风格示例 -->
+            <h2>你的风格：<span>百老汇经典爱好者</span></h2>
+            <p>你偏爱恢弘的管弦乐、跌宕起伏的剧情与华丽震撼的舞台呈现，追求音乐剧的“沉浸式大制作”体验，注重作品的娱乐性与艺术完整性。</p>
+            
+            <h3>专属推荐作品</h3>
+            <ul>
+                <li><strong>《歌剧魅影》</strong>：百老汇传奇之作，浪漫神秘的剧情+恢弘旋律，“魅影面具”舞台设计成为行业标杆。</li>
+                <li><strong>《芝加哥》</strong>：爵士与百老汇风格融合，黑色幽默剧情+魅惑歌舞，《All That Jazz》唱段家喻户晓。</li>
+                <li><strong>《狮子王》</strong>：迪士尼经典IP改编，原生态音乐+仿生舞美，还原非洲草原的壮阔与温情。</li>
+            </ul>
+
+            <h3>延伸探索</h3>
+            <p>想深入了解这类风格？可前往 <a href="story.html#broadway" style="color:#d43f3a; text-decoration:underline;">音乐剧类型页-百老汇板块</a>，或观看 <a href="media.html#phantom" style="color:#d43f3a; text-decoration:underline;">《摇滚红与黑》经典片段</a>。</p>
+        </section>
+
+        <!-- 功能按钮：重新测试+返回类型页 -->
+        <div class="btn-group next-btn">
+            <a href="test.html" class="btn">重新测试</a>
+            <a href="story.html" class="btn" style="background:#666; margin-left: 15px;">返回类型页</a>
+            <a href="media.html#classic" class="btn" style="background:#444; margin-left: 15px;">观看经典片段</a>
+        </div>
+    </main>
+
+    <!-- 页脚：与其他页面统一 -->
+    <footer>
+        <p>© 2025 音乐剧专站 | 专注于音乐剧文化传播</p>
+        <p>如有内容侵权，请联系我们删除</p>
+    </footer>
+
+    <!-- 简单JS：模拟根据表单参数切换结果（实际开发可扩展） -->
+    <script>
+        // 获取URL中的测试参数
+        const urlParams = new URLSearchParams(window.location.search);
+        const music = urlParams.get('music');
+        const story = urlParams.get('story');
+        const stage = urlParams.get('stage');
+
+        // 根据参数匹配风格（示例逻辑，可按需扩展）
+        const styleMap = {
+            broadway: {
+                title: "百老汇经典爱好者",
+                desc: "你偏爱恢弘的管弦乐、跌宕起伏的剧情与华丽震撼的舞台呈现，追求音乐剧的“沉浸式大制作”体验，注重作品的娱乐性与艺术完整性。",
+                works: ["《歌剧魅影》", "《芝加哥》", "《狮子王》"]
+            },
+            rock: {
+                title: "摇滚先锋派",
+                desc: "你热爱节奏强烈的摇滚曲风、叛逆真实的剧情，偏爱音乐剧传递的“青年态度”，注重作品的情感爆发力与社会表达。",
+                works: ["《吉屋出租》", "《汉密尔顿》", "《春之觉醒》"]
+            },
+            jazz: {
+                title: "爵士魅惑玩家",
+                desc: "你沉迷慵懒灵动的爵士旋律、充满都市感的剧情，喜欢音乐剧的“氛围感与格调”，注重歌舞的魅惑力与叙事的荒诞感。",
+                works: ["《芝加哥》", "《红男绿女》", "《蓝调天后》"]
+            },
+            pop: {
+                title: "流行治愈派",
+                desc: "你偏爱流行感十足的旋律、轻松温暖的剧情，喜欢音乐剧的“亲和力与传唱度”，注重作品的情感共鸣与正能量传递。",
+                works: ["《妈妈咪呀》", "《冰雪奇缘》", "《致埃文·汉森》"]
+            }
+        };
+
+        // 切换结果内容
+        if (music && styleMap[music]) {
+            const style = styleMap[music];
+            document.querySelector('.result-card h2 span').textContent = style.title;
+            document.querySelector('.result-card p').textContent = style.desc;
+            const worksList = document.querySelector('.result-card ul');
+            worksList.innerHTML = style.works.map(work => `<li><strong>${work}</strong>：${work === style.works[0] ? '风格核心代表作，完美契合你的音乐与剧情偏好' : '经典风格延伸，值得深度体验'}</li>`).join('');
+        }
+    </script>

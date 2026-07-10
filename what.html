@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>什么是音乐剧 - 音乐剧专站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="style.css">
+    <!-- 新增：同步index的内嵌CSS，统一布局 -->
+    <style>
+        #wrapper {
+            margin: 0 auto;
+            width: 80%;
+            min-width: 940px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #111;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        nav {
+            float: right;
+            width: 180px;
+            background: #444;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+        }
+        main, .hero { /* 若后续加焦点图，可复用此样式 */
+            margin-right: 180px;
+        }
+        header {
+            padding: 20px 15px;
+            background: transparent;
+            position: relative;
+            z-index: 1;
+        }
+        header .header-logo {
+            height: 60px;
+        }
+        /* 新增：将标题改为黑色 */
+        h1 {
+            color: #000; /* 黑色 */
+            margin: 10px 0; /* 保持适当间距 */
+        }
+        /* 如需调整其他标题（如h3），可补充：
+        h3 {
+            color: #000;
+        }
+        */
+    </style>
+</head>
+
+<body>
+    <!-- 新增：页面容器，统一布局 -->
+    <div id="wrapper">
+        <header>
+            <img src="images/logo.png" alt="音乐剧专站Logo" class="header-logo"> 
+            <h1>什么是音乐剧</h1>
+                </header>
+        
+        <nav>
+            <a href="what.html">什么是音乐剧</a>
+            <a href="story.html">音乐剧的类型</a>
+            <a href="cast.html">角色与演员</a>
+            <a href="media.html">多媒体</a>
+            <a href="background.html">原作与幕后</a>
+            <a href="review.html">影评</a>
+            <a href="credits.html">资料来源</a>
+        </nav>
+        
+        <main class="page-content">
+            <!-- 原有main内容不变 -->
+            <p class="intro-text">
+                如果你以为音乐剧只是“唱歌+跳舞”的堆砌，那就太小看它啦！音乐剧是舞台艺术的“亲民网红”，它不只是表演，它是一场让人肾上腺素飙升的综合盛宴。
+            </p>
+            <h3>🎭 形式之别：谁在舞台上“最努力”？</h3>
+            <p>
+                <strong>歌剧</strong>（Opera）的主角是声乐，一切为嗓音服务，演员们甚至不用说台词；<strong>舞剧</strong>（Ballet/Dance）的主角是身体，用肢体语言来讲故事；而<strong>音乐剧</strong>（Musical）则要求演员唱歌、跳舞、表演<strong>三项全能</strong>，一样都不能少！
+            </p>
+            <h3>💰 商业之别：谁离我们“最近”？</h3>
+            <p>
+                <strong>歌剧</strong>通常是高雅、历史悠久的艺术形式，票价和欣赏门槛相对较高；<strong>音乐剧</strong>是高度商业化的流行艺术，它的剧本和音乐更贴近现代生活，目的就是为了让普通观众也能看得开心、听得入迷，所以才火遍全球！
+            </p>
+            <h3>🎼 音乐之别：谁在用“流行”说话？</h3>
+            <p>
+                <strong>歌剧</strong>使用的音乐是传统的古典乐体系；而<strong>音乐剧</strong>的音乐则非常大胆，可以融入爵士、摇滚、流行、民谣等各种现代元素，曲风丰富多样，很多歌曲甚至能成为传唱一时的流行金曲！
+            </p>
+            
+            <a href="story.html" class="btn next-btn">下一步：看看音乐剧有哪些类型！</a>
+        </main>
+        
+        <footer>
+            <p>© 2025 音乐剧专题作业站 | 素材仅供学习使用</p>
+        </footer>
+    </div>
+<!-- index.html 和 what.html 均需添加：放在</body>前 -->
+<script>
+// 监听整个页面的点击事件
+document.addEventListener('click', function(e) {
+    // 1. 创建手型元素（用文字图标“👋”，无需额外图片）
+    const handElem = document.createElement('span');
+    handElem.className = 'click-hand'; // 关联CSS样式
+    handElem.textContent = '👋'; // 手型图标（也可替换为手型图片：<img>标签）
+    
+    // 2. 设置手型位置为“点击坐标”
+    handElem.style.left = `${e.clientX}px`; // 点击点的X轴坐标
+    handElem.style.top = `${e.clientY}px`;  // 点击点的Y轴坐标
+    
+    // 3. 将手型元素添加到页面
+    document.body.appendChild(handElem);
+    
+    // 4. 动画结束后删除元素（避免DOM堆积）
+    setTimeout(() => {
+        handElem.remove();
+    }, 1000); // 与CSS动画时长一致（1秒）
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+/* style.css - 音乐剧专题站全局样式表（整合原样式+index布局适配+手型特效） */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 30px 0; /* 增加上下留白，避免页面贴边 */
+    background: #f5f5f5;
+    background-image: url('images/bg.jpg'); 
+    background-size: cover;          
+    background-repeat: no-repeat;    
+    background-attachment: fixed;    
+    color: #333;
+}
+
+h1 {
+  color: #black; /* 适配header白色文字 */
+  font-size: 2.5rem; /* 保证字号醒目 */
+  margin: 20px 0; /* 增加上下间距，避免挤压 */
+  text-align: center; /* 居中对齐更美观 */
+}
+
+h2 {
+    color: #d43f3a; /* 继承主题红色，与h3风格统一 */
+    font-size: 1.8rem;
+    margin: 20px 0;
+    text-align: center;
+}
+
+#box { 
+    background-color: #74C0FF;
+    margin-left: 60px;
+    padding: 5px 10px;
+    border: 1px solid #000000;
+    border-radius: 15px;
+    display: inline-block; /* 避免独占一行 */
+}
+
+/* 页面主容器样式（控制整体背景透明色） */
+#wrapper {
+    margin: 0 auto; /* 居中显示 */
+    width: 80%; /* 宽度占屏幕80%，适配不同设备 */
+    min-width: 940px; /* 最小宽度，避免窄屏变形 */
+    /* 背景透明色：浅米色透明（与音乐剧暖色调协调） */
+    background-color: rgba(255, 248, 240, 0.9); /* r:255 g:248 b:240 浅米色，透明度0.9 */
+    color: #333; /* 文字颜色，确保与背景对比清晰 */
+    border-radius: 8px; /* 圆角边框，柔和视觉 */
+    box-shadow: 0 0 20px rgba(0,0,0,0.1); /* 轻微阴影，增强层次感 */
+    overflow: hidden; /* 避免内部元素溢出容器 */
+}
+
+/* 头部样式：适配容器布局 */
+header {
+    background: linear-gradient(135deg, #444, #222); /* 深灰渐变，适配白色文字 */
+    color: white;
+    padding: 25px 15px;
+    text-align: center;
+    position: relative;
+    border-radius: 8px 8px 0 0; /* 与#wrapper圆角呼应 */
+}
+
+.header-logo {
+    height: 50px;
+    margin-right: 20px; 
+    vertical-align: middle;
+    border-radius: 50%; /* Logo圆角，提升精致度 */
+}
+
+/* 导航栏样式：融合布局逻辑 */
+nav {
+    background: #444;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 18px;
+    display: block;
+    transition: background 0.3s, transform 0.3s; /* 平移过渡，提升交互感 */
+}
+
+nav a:hover {
+    background: #d43f3a; /* 主题红，与按钮颜色统一 */
+    transform: translateX(5px); /* 轻微右移，增强动效 */
+}
+
+/* 二级菜单样式：确保功能正常 */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    color: white;
+    text-decoration: none;
+    padding: 12px 18px;
+    display: block;
+    cursor: pointer;
+    width: 100%; /* 适配导航栏宽度，确保点击区域完整 */
+    box-sizing: border-box;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
+    top: 100%;
+    left: 0; /* 左对齐，适配导航 */
+    transform: none; /* 取消居中，避免位置偏移 */
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left; /* 左对齐文字，符合阅读习惯 */
+    border-top: 1px solid #555;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #d43f3a; /* 主题红，与导航hover统一 */
+    transform: translateX(5px); /* 轻微右移，增强动效 */
+}
+
+/* 焦点图样式：适配容器宽度 */
+.hero {
+    background: url('images/rd01.jpg') center/cover no-repeat;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2.2rem; /* 放大文字，更醒目 */
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8); /* 加深阴影，提升可读性 */
+    margin: 0;
+    transition: transform 0.5s ease; /* 缩放过渡 */
+}
+
+.hero:hover {
+    transform: scale(1.02); /* hover时轻微放大，增强视觉冲击 */
+}
+
+/* 主体内容样式：优化适配性 */
+main {
+    padding: 30px;
+    text-align: center;
+}
+
+.intro-text {
+    font-style: italic;
+    font-family: 'Georgia', serif;
+    font-size: 1.25rem;
+    color: #222; /* 加深文字色，提升可读性 */
+    margin: 30px auto;
+    max-width: 800px;
+    line-height: 1.8;
+    padding: 20px;
+    border-left: 5px solid #d43f3a;
+    text-align: left;
+    background-color: rgba(245,245,245,0.8); /* 提高不透明度，避免背景透色 */
+}
+
+h3 {
+    color: #d43f3a;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    margin-top: 40px;
+    text-align: left;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-content p {
+    text-align: justify;
+    max-width: 800px;
+    margin: 15px auto;
+    line-height: 1.6;
+    padding: 0 10px; /* 左右留白，避免文字贴边 */
+}
+
+/* 卡片样式（统一测试与联系卡片） */
+.card {
+    margin: 25px auto;
+    padding: 25px;
+    background: linear-gradient(135deg, rgba(212, 63, 58, 0.05), rgba(212, 63, 58, 0.15));
+    border-radius: 12px;
+    border-left: 4px solid #d43f3a;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    max-width: 800px; /* 与内容区宽度一致 */
+    text-align: left;
+}
+
+/* 联系列表样式 */
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+.contact-list li {
+    line-height: 2;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact-list li i {
+    color: #d43f3a;
+    width: 24px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.contact-list a {
+    color: #d43f3a;
+    text-decoration: none;
+}
+
+.contact-list a:hover {
+    text-decoration: underline;
+}
+
+/* 按钮样式：优化交互 */
+.btn {
+    background: #d43f3a;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 20px;
+    display: inline-block;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s; /* 阴影过渡 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* 初始阴影 */
+}
+
+.btn:hover {
+    background: #b52b27;
+    transform: translateY(-2px); /* hover时轻微上移，增强交互反馈 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* 加深阴影，增强悬浮感 */
+}
+
+.next-btn {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* 底部样式：适配容器 */
+footer {
+    background: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 20px 15px;
+    margin-top: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    border-top: 3px solid #d43f3a; /* 主题红边框，强化主题 */
+    border-radius: 0 0 8px 8px; /* 与#wrapper圆角呼应 */
+}
+
+/* 手型特效样式 */
+.click-hand {
+    position: fixed; /* 跟随点击坐标，不随页面滚动 */
+    font-size: 2.5rem; /* 手型大小 */
+    color: #d43f3a; /* 主题红，与按钮/导航hover色统一 */
+    pointer-events: none; /* 不拦截其他点击 */
+    z-index: 9999; /* 最高层级，避免被遮挡 */
+    transform: translate(-50%, -50%); /* 中心对齐点击点 */
+    animation: handEffect 1s ease-out forwards; /* 绑定动画 */
+}
+
+/* 手型动画关键帧 */
+@keyframes handEffect {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.6); /* 初始：小且半透明 */
+    }
+    50% {
+        opacity: 0.9;
+        transform: translate(-50%, -50%) scale(1.2); /* 中间：放大且清晰 */
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1); /* 结束：淡出 */
+    }
+}
